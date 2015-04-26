@@ -40,7 +40,6 @@ Common pitfalls during porting:
 
 To Do Lists:
 
-   Port BaseN and BaseBigN.
-   
-   (May be) Add Test Units.
+    Port BaseN and BaseBigN.
+    (May be) Add Test Units.
 
