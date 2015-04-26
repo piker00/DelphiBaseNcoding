@@ -21,7 +21,7 @@ Hints about the code:
     All Strings were ported as 1-Based (Index) because that is what Delphi Desktop 
     Compilers Uses by Default.
     The "Base Strings" were converted to Constant Arrays in Delphi.
-    Delphi needs manual disposal of objects created , as they dont have built-in 
+    Delphi needs manual disposal of objects created , as they don't have built-in 
     destructor (automatic garbage collectors) support in them.
 
 This Library is written with Delphi XE7 Update 1.
