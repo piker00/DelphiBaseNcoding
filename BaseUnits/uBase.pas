@@ -35,6 +35,7 @@ function IsPowerOf2(x: LongWord): Boolean;
 function LCM(a, b: Integer): Integer;
 function NextPowOf2(x: LongWord): LongWord;
 function IntPow(x: UInt64; exp: Integer): UInt64;
+// function BigIntPow(x: String; exp: Integer): String;
 function LogBase2(x: LongWord): Integer; overload;
 function LogBase2(x: UInt64): Integer; overload;
 function LogBaseN(x, n: LongWord): Integer; overload;
@@ -94,9 +95,9 @@ function StartsWith(InStringOne, InStringTwo: String): Boolean;
 var
   tempStr: String;
 begin
-
+  // result := False;
   tempStr := Copy(InStringOne, 1, 2);
-
+  // result := SameText(InStringOne[1], InStringTwo);
   result := SameText(tempStr, InStringTwo);
 
 end;
@@ -105,9 +106,10 @@ function EndsWith(InStringOne, InStringTwo: String): Boolean;
 var
   tempStr: string;
 begin
-
+  // result := False;
+  // InStringOne[Length(InStringOne)];
   tempStr := Copy(InStringOne, Length(InStringOne) - 1, 2);
-
+  // result := SameText(InStringOne[Length(InStringOne)], InStringTwo);
   result := SameText(tempStr, InStringTwo);
 
 end;
@@ -203,6 +205,30 @@ begin
   result := tempResult;
 
 end;
+
+// Ported with UBigIntsv4 Big Number Library Since Delphi Does Not Have a
+// BigInteger Type
+{ function BigIntPow(x: String; exp: Integer): String;
+
+  var
+  tempResult, xTInt: TInteger;
+  i: Integer;
+  begin
+  xTInt := TInteger.Create(0);
+  tempResult := TInteger.Create(0);
+
+  tempResult.Assign(1);
+  xTInt.Assign(x);
+  for i := 0 to Pred(exp) do
+  begin
+  tempResult.Mult(xTInt);
+  end;
+
+  Result := tempResult.converttoDecimalString(False);
+  xTInt.free;
+  tempResult.free;
+
+  end; }
 
 function LogBase2(x: LongWord): Integer; overload;
 var
@@ -409,4 +435,5 @@ begin
 
 end;
 
+// uint maxBitsCount = 64, bool base2BitsCount = false
 end.

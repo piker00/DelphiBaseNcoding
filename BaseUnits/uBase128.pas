@@ -209,7 +209,7 @@ begin
 
   begin
     SetLength(result, 1);
-    result := [0];
+    result := Nil;
     Exit;
   end;
   lastSpecialInd := Length(data);
