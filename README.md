@@ -10,7 +10,7 @@
 
 
    
-     **DelphiBaseNcoding** is a straight clone of BaseNcoding with as little changes as 
+     DelphiBaseNcoding is a straight clone of BaseNcoding with as little changes as 
      possible, to allow easy Synchronization in the future.
 
     1. All file names (units) are the same, but with a "u" prefix. 
