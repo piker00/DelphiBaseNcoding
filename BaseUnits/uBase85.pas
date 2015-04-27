@@ -186,7 +186,7 @@ begin
     begin
 
       Case IndexStr(c, ['z']) of
-        // 'z':
+
         0:
           begin
             if (count <> 0) then
@@ -199,7 +199,7 @@ begin
             decodedBlock[2] := 0;
             decodedBlock[3] := 0;
             ms.Write(decodedBlock, 0, Length(decodedBlock));
-            // ms.Write()
+
             processChar := False;
           end
 
@@ -236,10 +236,10 @@ begin
       DecodeBlock(count, decodedBlock, tuple);
       for i := 0 to Pred(count) do
       begin
-        // ms.WriteByte(decodedBlock[i]);
+
         ms.Write(decodedBlock[i], 1);
       end;
-      // ms.ToArray();
+
       ms.Position := 0;
       SetLength(result, ms.Size);
       ms.Read(result[0], ms.Size);
@@ -257,8 +257,7 @@ var
 begin
   for i := 0 to Pred(bytes) do
   begin
-    // decodedBlock[i] := byte(UInt32(tuple shr 24) - (UInt32(i * 8)));
-    // decodedBlock[i] := Byte((tuple shr 24) - (i * 8));
+
     decodedBlock[i] := byte(tuple shr (24 - (i * 8)));
   end;
 end;
